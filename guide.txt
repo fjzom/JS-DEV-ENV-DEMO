@@ -1,0 +1,52 @@
+ 
+General commands
+npm start -s
+
+run command git init
+créate .editorconfig edit config file from www.editorconfig.org 
+
+Package Management(NPM)
+create package.json FROM bit.ly/jsdevpackagejson copy and paste file
+run command  npm install
+npm audit --audit-level high
+npm audit --audit-level high
+
+Development Web Server(http-server, budo, Express, KOA, hapi,)
+npm install express(in case is not in package.json)
+create:
+ BuildScript folder ,  srcServer.js file
+             src folder, index.html file
+SHARING WORK IN PROGRESS(Browsersync, localtunnel, now, surge, ngrok)
+npm install localtunnel –g
+lt –port 3000 –subdomain <name  domain>
+ctrl + c to stop sharing
+
+Automation(NPM scripts, Grunt, )
+go to package.json
+add “script”: { 
+“prestart”: “node <name file js>” add inside script
+“start”: “node <name file js>” add inside script
+}
+ 
+execute npm start -s
+Optional to run in parallel
+“start”: “npm-run-all –parallel node  <name file js>  node <name file js> etc” add inside script
+
+Transpalling(Babel, typescript, Elm)
+create .babelrc file
+{
+    "presets": ["latest"]
+  }
+go to package.json 
+“prestart”: “babel-node <name file js>” add babel prefix in each node command
+
+Bundling(browserify, webpack, rollup, jspm )
+create webpack.config.dev.js download file from bit.ly/2dSZwea
+
+Linters(JSLint, JSHint, ESLint)
+create .eslintrc.json copy file from bit.ly/jsdeveslint
+package.json set “lint” script
+npm run lint     
+/* eslint-disable no-console */ to disable lint rule in whole file
+// eslint-disable-line no-console to disable lint rule in the line
+“lint:watch”: “npm run lint -- --watch” to automatically run script lint 
