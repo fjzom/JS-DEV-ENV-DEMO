@@ -50,3 +50,28 @@ npm run lint
 /* eslint-disable no-console */ to disable lint rule in whole file
 // eslint-disable-line no-console to disable lint rule in the line
 “lint:watch”: “npm run lint -- --watch” to automatically run script lint 
+
+Testing(Mocha, Jasmine, Tape, QUnit, Ava, Jest)
+Choose  a set of testing tool
+Mocha 
+Chai assertion librery cus mocha dosent have
+jsdom helper librery to test html in memory DOM
+create testSetup.js
+package.json create "test" script 
+create test file index.test.js:  import next libreries
+	import {expect} from 'chai';
+	import fs from 'fs';
+	import jsdom from 'jsdom';
+create test cases
+run npm test 
+add "test:watch": "npm run test -- --watch"
+
+
+Consejos 
+no se aburmen por los comandos muchos de ellos o solo los van a ejecutar una vez o se repiten mucho
+
+
+
+
+
+
