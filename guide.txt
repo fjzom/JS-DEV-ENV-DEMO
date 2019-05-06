@@ -1,21 +1,24 @@
  
+ 
 General commands
 npm start -s
 
-run command git init
 créate .editorconfig edit config file from www.editorconfig.org 
 
 Package Management(NPM)
 create package.json FROM bit.ly/jsdevpackagejson copy and paste file
 run command  npm install
-npm audit --audit-level high
-npm audit --audit-level high
+npm audit --audit-level high 
+create repository github
+add .gitignore into the project and add node_module
 
 Development Web Server(http-server, budo, Express, KOA, hapi,)
 npm install express(in case is not in package.json)
 create:
- BuildScript folder ,  srcServer.js file
+			 BuildScript folder ,  srcServer.js, startMessage.js file
              src folder, index.html file
+node buildScripts/srcServer.js <- run ->
+
 SHARING WORK IN PROGRESS(Browsersync, localtunnel, now, surge, ngrok)
 npm install localtunnel –g
 lt –port 3000 –subdomain <name  domain>
@@ -27,10 +30,8 @@ add “script”: {
 “prestart”: “node <name file js>” add inside script
 “start”: “node <name file js>” add inside script
 }
- 
-execute npm start -s
-Optional to run in parallel
-“start”: “npm-run-all –parallel node  <name file js>  node <name file js> etc” add inside script
+npm start -s <- run ->
+ “start”: “npm-run-all –parallel node  <name file js>  node <name file js> etc” Recommendation: to run in parallel add inside "start" script
 
 Transpalling(Babel, typescript, Elm)
 create .babelrc file
