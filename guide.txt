@@ -67,10 +67,13 @@ create test cases
 run npm test 
 add "test:watch": "npm run test -- --watch"
 
-
+Continuos Integration(Travis Appveyor Jenkins CircleCI Semaphore SnapCI)
+create .travis.yml for MAC
+go to ci.appveyor.com
+create appveyor.yml for Window
 Consejos 
 no se aburmen por los comandos muchos de ellos o solo los van a ejecutar una vez o se repiten mucho
-
+CRE
 
 
 
