@@ -76,7 +76,10 @@ verify check yml file here -> http://yaml-online-parser.appspot.com/
 HTTP Call
 
 Mock
+Schema:
 create mockDataSchema.js from bit.ly/ps-mock-data-schema 
+Mock Data
+generateMockData.js
 
 
 
