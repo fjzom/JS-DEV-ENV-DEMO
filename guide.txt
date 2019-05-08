@@ -69,8 +69,23 @@ add "test:watch": "npm run test -- --watch"
 
 Continuos Integration(Travis Appveyor Jenkins CircleCI Semaphore SnapCI)
 create .travis.yml for MAC
-go to ci.appveyor.com
+go to ci.appveyor.com add project
 create appveyor.yml for Window
+verify check yml file here -> http://yaml-online-parser.appspot.com/
+
+HTTP Call
+
+Mock
+create mockDataSchema.js from bit.ly/ps-mock-data-schema 
+
+
+
+
+
+
+
+
+
 Consejos 
 no se aburmen por los comandos muchos de ellos o solo los van a ejecutar una vez o se repiten mucho
 CRE
