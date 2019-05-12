@@ -42,7 +42,13 @@ go to package.json
 “prestart”: “babel-node <name file js>” add babel prefix in each node command
 
 Bundling(browserify, webpack, rollup, jspm )
-create webpack.config.dev.js download file from bit.ly/2dSZwea
+create webpack.config.dev.js to create a the config file refer to https://webpack.js.org/configuration and https://createapp.dev/webpack 
+srcServer.js add:
+	import webpack from 'webpack';
+	import config from '../webpack.config.dev';
+	const compiler = webpack(config);
+	app.use webpack-dev-middleware function
+add <script src="bundle.js"> </script> in the html 
 
 Linters(JSLint, JSHint, ESLint)
 create .eslintrc.json copy file from bit.ly/jsdeveslint
@@ -74,25 +80,61 @@ create appveyor.yml for Window
 verify check yml file here -> http://yaml-online-parser.appspot.com/
 
 HTTP Call
-
+create buildScripts/srcServer.js here is the enpoint ENPOINT
+	add get method to connect with the backend data(bd)
+create folder 'api' inside 'src' 
+create baseUrl.js : server, db , mock server address, example: 'http://localhost:3004/'
+	add function and export to return string
+create src/api/userApi.js
+	add import 'whatwg-fetch';
+	import getBaseUrl from './baseUrl';
+	add fetch method
+create src/index.js  
+	import  {getUsers} from './api/userApi'; 
+	use getUser()
+create index.js:
+	import {function} from './api/userApi'
+	add get or post function retrive the information and handle it whatever you want.
+ 
 Mock
 Schema:
-create mockDataSchema.js from bit.ly/ps-mock-data-schema 
+create buildScripts/mockDataSchema.js from bit.ly/ps-mock-data-schema 
 Mock Data
-generateMockData.js
+create buildScripts/generateMockData.js
+	import jsf from 'json-schema-faker';
+	import {schema} from './mockDataSchema';
+	import fs from 'fs';
+	import chalk from 'chalk';
+"generate-mock-data": "babel-node ./buildScripts/generateMockData" add script 
+"prerestart-mockapi": "npm run generate-mock-data"    generate random data always before up the mockapi server
+"start-mockapi": "json-server --watch ./src/api/db.json --port 3001"   raise a server with json objects and random data
+"start": "start-mockapi" 
+
+Debug
 
 
 
 
 
 
-
-
+importante 
+get a  big picture of the pricipal tools
+package.json
+	scripts
+		pre & pos
+webpack
+set Debug
+ 
 
 Consejos 
 no se aburmen por los comandos muchos de ellos o solo los van a ejecutar una vez o se repiten mucho
 CRE
 
+al ser opensrouce los cursos y librerias estan en cosntante cambio es importante actualizarse.
+Utilizar librerias con la mejor documentacion.
+
+
+remove from .config all temp files "C:\Users\f.oviedo.maltez\.config\configstore"
 
 
 

@@ -1,23 +1,24 @@
 import path from 'path';
 
-export default {
-  debug: true,
-  devtool: 'inline-source-map',
-  noInfo: false,
-  entry: [
-    path.resolve(__dirname, 'src/index')
-  ],
+export default { 
+  devtool: 'inline-source-map', 
+  entry: {
+    index: [
+        "./src/index.js"
+    ]
+  } ,
   target: 'web',
   output: {
-    path: path.resolve(__dirname, 'src'),
+    path: path.resolve(__dirname, './src'),
     publicPath: '/',
     filename: 'bundle.js'
-  },
-  plugins: [],
+  }, 
+    plugins: [],
   module: {
-    loaders: [
-      {test: /\.js$/, exclude: /node_modules/, loaders: ['babel']},
-      {test: /\.css$/, loaders: ['style','css']}
+    rules: [
+      {  test: /\.jsx$/,  loader: 'babel-loader', exclude: /node_modules/ },
+      { test: /\.css$/, use: ["style-loader", "css-loader"]}
     ]
   }
 }
+ 
