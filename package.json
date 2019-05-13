@@ -16,8 +16,13 @@
     "test:watch": "npm run test -- --watch",
     "generate-mock-data": "babel-node ./buildScripts/generateMockData",
     "prerestart-mockapi": "npm run generate-mock-data",
-    "start-mockapi": "json-server --watch ./src/api/db.json --port 3004",
-    "devtool": "devtool index.js --watch"
+    "start-mockapi": "json-server --watch ./src/api/db.json --port 3001",
+    "devtool": "devtool index.js --watch",
+    "clean-dist": "rimraf ./dist && mkdir dist",
+    "prebuild": "npm-run-all clean-dist test lint",
+    "build": "babel-node buildScripts/build.js",
+    "postbuild": "babel-node buildScripts/distServer.js"
+
   },
   "author": "Felipe Oviedo",
   "license": "MIT",

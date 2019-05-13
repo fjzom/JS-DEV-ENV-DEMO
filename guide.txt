@@ -1,4 +1,17 @@
+ NPM www.npmjs.com/
+ npm i node 						<- INSTALL NODE STRUCTURE
+ npm init 							<- CREATE package.json
+ npm install <package name> 		<- ADD PACKAGE
+ npm install <git url> 				<- ADD PACKAGE FROM GIT ADD --save for externous ERR
+ npm install <gist:hashcode> 		<- ADD PACKAGE FROM GIST  --save for externous ERR
+ npm install <path> 				<- ADD PACKAGE FROM LOCAL FOLDER  --save for externous ERR
+ npm install <package name> -g		<- ADD PACKAGE GLOBALLY
+ npm update <package name> -g 		<-  UPDATE GLOBALLY DEPENDENCIE
+ npm i npm@latest -g 				<- EXECUTE THIS IN WINDOWS SHELL PROMPT C:\Windows\system32
+ npm list -g --depth 0 				<- GET GLOBAL DEPENDENCIS
  
+ Started kit
+ Packagem
  
 General commands
 npm start -s
@@ -109,6 +122,37 @@ create buildScripts/generateMockData.js
 "prerestart-mockapi": "npm run generate-mock-data"    generate random data always before up the mockapi server
 "start-mockapi": "json-server --watch ./src/api/db.json --port 3001"   raise a server with json objects and random data
 "start": "start-mockapi" 
+
+
+Prodution Build
+-Production webpack set env
+-configure toogle mock api
+-Dynamic html generation
+create web.pack.config.prod.js
+	add source-map
+	add dist in the output
+    add plugins       
+        new webpackConfigDev.optimize.DedupePlugin()  Eliminate duplicate packages when generating bundle expired plugin!!
+        new webpackConfigDev.optimize.UglyfyJsPlugin()   Manify JS  expired plugin!!
+		HtmlWebpackPlugin Create HTML file that includes reference to bundled JS.
+			remove script bundle.js from html file
+create ./buildScripts/build.js
+create ./buildScripts/disServer.js
+add next scripts:
+    "clean-dist": "rimraf ./dist && mkdir dist",
+    "prebuild": "npm-run-all clean-dist test lint",
+    "build": "babel-node buildScripts/build.js",
+    "postbuild": "babel-node buildScripts/distServer.js"
+modify baseUrl and create getQueryStringParameterByName() method
+-Bundle splitting
+modify webpack.config.prod.js	
+	add vendor in entry 
+	add plugin webpack.optimize.CommonsChunkPlugin
+create v./src/api/vendor.js
+	add all depndencies and imports in your project in ordert to avoid reload depndendencies
+
+
+
 
 Debug
 
