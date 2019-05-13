@@ -2,11 +2,10 @@
 
 
 To make it fly:
-1) npm install
+1)npm install
 
 
 2)Dev env: http://localhost:3000/?useMockApi=true
-
 npm run start -s
 
 
