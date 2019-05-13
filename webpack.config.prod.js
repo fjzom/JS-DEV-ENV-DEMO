@@ -3,15 +3,19 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 export default { 
   devtool: 'source-map', 
   entry: {
-    index: [
-        "./src/index.js"
-    ]
+    vendor: path.resolve(__dirname, './src/vendor.js'),
+   
+      
+      main : [
+      path.resolve(__dirname, './src/index.js')
+      ]
+ 
   } ,
   target: 'web',
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/',
-    filename: 'bundle.js'
+    filename: '[name].js'
   }, 
     plugins: [
       // Create HTML file that includes reference to bundled JS.

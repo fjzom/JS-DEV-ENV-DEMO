@@ -22,9 +22,9 @@ app.get('/', function(req, resp ){
 
 app.get('/users', function(req, resp){ 
     resp.json([
-            {"id": 1, "firstName": "Bob", "lastName": "Smith", "email": "aaaa@asd.com"},
-            {"id": 2, "firstName": "Tammy", "lastName": "Norton", "email": "bbba@asd.com"},
-            {"id": 3, "firstName": "Tina", "lastName": "Lee", "email": "bbba@asd.com"}
+            {"userId": 1, "firstName": "Bob", "lastName": "Smith", "email": "aaaa@asd.com"},
+            {"userId": 2, "firstName": "Tammy", "lastName": "Norton", "email": "bbba@asd.com"},
+            {"userId": 3, "firstName": "Tina", "lastName": "Lee", "email": "bbba@asd.com"}
         ]);
 });
 
